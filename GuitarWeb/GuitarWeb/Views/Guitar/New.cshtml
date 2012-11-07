@@ -1,0 +1,50 @@
+﻿@model GuitarWeb.Models.Guitar
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Guitar</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RegNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RegNumber)
+            @Html.ValidationMessageFor(model => model.RegNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Model)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Model)
+            @Html.ValidationMessageFor(model => model.Model)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductionYear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductionYear)
+            @Html.ValidationMessageFor(model => model.ProductionYear)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "GuitarList")
+</div>

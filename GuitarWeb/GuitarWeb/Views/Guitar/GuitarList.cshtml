@@ -1,0 +1,49 @@
+﻿@model IEnumerable<GuitarWeb.Models.Guitar>
+
+@{
+    ViewBag.Title = "GuitarList";
+}
+
+
+<script src="~/Scripts/GuitarScripts.js"></script>
+
+<h2>GuitarList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "New")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RegNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionYear)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductionYear)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RegNumber}) 
+            <button title="Delete" value="Show details" id="ButtonA" onclick="javascript:DeleteGuitar(@item.RegNumber);" />
+             <button title="List" id="Buttonb" onclick="javascript:GetGuitars();" />
+          
+        </td>
+    </tr>
+}
+    
+</table>

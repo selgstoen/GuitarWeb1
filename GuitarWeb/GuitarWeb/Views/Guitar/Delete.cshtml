@@ -1,0 +1,45 @@
+﻿@model GuitarWeb.Models.Guitar
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+<h3>Are you sure you want to delete this?</h3>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+<fieldset>
+    <legend>Guitar</legend>
+
+    <div class="editor-label">
+         @Html.EditorFor(model => model.RegNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RegNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Model)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ProductionYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductionYear)
+    </div>
+    <p> <input type="submit" value="Delete" /> </p>
+</fieldset>
+
+    <p>
+       
+        @Html.ActionLink("Back to List", "GuitarList")
+    </p>
+}

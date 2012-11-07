@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGuitar xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Guitar>
+    <RegNumber>gfds</RegNumber>
+    <Model>gfds</Model>
+    <ProductionYear>0</ProductionYear>
+  </Guitar>
+  <Guitar>
+    <RegNumber>ttt44</RegNumber>
+    <Model>xbvcxbvc</Model>
+    <ProductionYear>0</ProductionYear>
+  </Guitar>
+</ArrayOfGuitar>
